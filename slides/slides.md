@@ -192,7 +192,7 @@ Find all Documents with a status code >= 200 and <= 302
 
 # Aggregation framework #
 
-* Arrived in v2.2
+* Arrived in v2.2 (current stable)
 * Alternative to MapReduce (easier)
 * Includes `count`, `distinct`, `group`
 * [Aggregation docs](http://www.mongodb.org/display/DOCS/Aggregation)
