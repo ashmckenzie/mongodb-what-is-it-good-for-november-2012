@@ -69,7 +69,7 @@ e.g. 47cc67093475061e3d95369d
   </tr>
 </table>
 
-The reason behind the large number is to ensure uniqueness across clusters.
+The reason behind the large number is to ensure uniqueness across clusters
 
 !SLIDE bullets
 
@@ -148,6 +148,11 @@ Update an individual attribute within the Document
     @@@sh
     db.users.update({ name: 'Johnny' }, { '$set': { cool: true }})
 
+Upsert a Document
+
+    @@@sh
+    db.users.update({ name: 'Johnny' }, { name: 'Johnny', cool: true }, true)
+
 
 !SLIDE bullets
 
@@ -183,21 +188,25 @@ Find all Documents with a status code >= 200 and <= 302
     db.log_entries.find({ loc : { $near : [ -37.788, 144.971 ], $maxDistance: 5 }})
 
 
-!SLIDE bullets smbullets
+!SLIDE bullets
 
 # Aggregation framework #
 
 * Arrived in v2.2
+* Alternative to MapReduce (easier)
+* Includes `count`, `distinct`, `group`
 * [Aggregation docs](http://www.mongodb.org/display/DOCS/Aggregation)
 
 
 !SLIDE bullets
 
-# Trawler #
+# MongoDB use case #
 
-## MongoDB use case ##
+## Trawler ##
 
 ![Trawler](trawler.png)
+
+* Sinatra app using Mongoid
 
 
 !SLIDE bullets
