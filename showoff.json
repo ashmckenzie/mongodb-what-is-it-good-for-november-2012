@@ -1,0 +1,12 @@
+{
+  "name": "MongoDB - What is it (good for) ?",
+  "author": "Ash McKenzie",
+  "templates" : {
+    "default" : "default.tpl"
+  },
+  "sections": [
+    {
+      "section": "slides"
+    }
+  ]
+}
