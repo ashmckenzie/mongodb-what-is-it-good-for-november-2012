@@ -207,6 +207,7 @@ Find all Documents with a status code >= 200 and <= 302
 ![Trawler](trawler.png)
 
 * Sinatra app using Mongoid
+* Throw log files in, trawl them
 
 
 !SLIDE bullets
