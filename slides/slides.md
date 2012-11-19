@@ -30,7 +30,7 @@
 
 # Features #
 
-* Stores data in JSON format (awseome!)
+* Stores data in JSON format (actually [BSON](http://en.wikipedia.org/wiki/BSON))
 * Supports indexing (primary, secondary, compound)
 * Sharding support out-of-the-box
 * JavaScript style querying (weird at first)
@@ -43,14 +43,14 @@
 * Database == Database
 * Collection == Table
 * Document == Row
-* Each Document has an `_id` (ObjectId)
+* Each Document has a unique `_id` (ObjectId)
 
 
 !SLIDE bullets smbullets
 
 # ObjectId #
 
-* An ObjectId is a unique identifier and made up of
+* An ObjectId is a unique identifier and made up of:
 
 e.g. 47cc67093475061e3d95369d
 
@@ -68,6 +68,8 @@ e.g. 47cc67093475061e3d95369d
     <td>Incrementing, starts random (3b)</td>
   </tr>
 </table>
+
+The reason behind the large number is to ensure uniqueness across clusters.
 
 !SLIDE bullets
 
@@ -117,20 +119,76 @@ e.g. 47cc67093475061e3d95369d
 Insert a single Document
 
     @@@sh
-    db.play_collection.insert({ key: 'This is our key', value: [ 1, 2, 3 ] })
+    db.users.insert({ name: 'Snake', languages: [ 'eng' ] })
 
+Insert with a another Document as a reference (think JOIN)
 
+    @@@sh
+    db.groups.insert({ name: 'Cool Guys' })
+    cool_guys = db.groups.findOne({ name: 'Cool Guys' })
+    db.users.insert({ name: 'Snake', groups: [ cool_guys._id ] })
 
 
 !SLIDE bullets
 
 # Updating Documents #
 
+Update a single Document
+
+    @@@sh
+    db.users.update({ name: 'Snake' }, { name: 'Johnny', languages: [ 'eng', 'esp' ] })
+
+Push a new language to a Document
+
+    @@@sh
+    db.users.update({ name: 'Johnny' }, { '$push': { languages: 'fr' }})
+
+Update an individual attribute within the Document
+
+    @@@sh
+    db.users.update({ name: 'Johnny' }, { '$set': { cool: true }})
 
 
 !SLIDE bullets
 
+# Removing Documents #
+
+Remove a single Document
+
+    @@@sh
+    db.users.remove({ name: 'Johnny' })
+
+Remove all Documents from a Collection
+
+    @@@sh
+    db.users.remove()
+
+!SLIDE bullets
+
 # Querying Documents #
+
+Find by ObjectId
+
+    @@@sh
+    db.users.find({ _id: ObjectId('50a5eb398463e9d710000014') })
+
+Find all Documents with a status code >= 200 and <= 302
+
+    @@@sh
+    db.log_entries.find({ status_code: {'$gte': 200, '$lte': 302 } })
+
+[Geospatial](http://www.mongodb.org/display/DOCS/Geospatial+Indexing) lookup (sorted by distance)
+
+    @@@sh
+    db.log_entries.find({ loc : { $near : [ -37.788, 144.971 ], $maxDistance: 5 }})
+
+
+!SLIDE bullets smbullets
+
+# Aggregation framework #
+
+* Arrived in v2.2
+* [Aggregation docs](http://www.mongodb.org/display/DOCS/Aggregation)
 
 
 !SLIDE bullets
@@ -146,4 +204,6 @@ Insert a single Document
 
 # Handy links #
 
+* [MongoDB Manual](http://docs.mongodb.org/manual/)
 * [SQL to Mongo mapping chart](http://www.mongodb.org/display/DOCS/SQL+to+Mongo+Mapping+Chart)
+* [Schema Design with Emily Stolfo](https://github.com/estolfo/presentations/blob/master/Schema-design/Schema%20Design%20By%20Example.pdf?raw=true)

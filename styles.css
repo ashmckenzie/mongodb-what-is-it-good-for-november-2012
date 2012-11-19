@@ -132,8 +132,6 @@ pre, .code {
   font-size: 1.3em !important;
 }
 
-/* -------------------------------------------------------------------------- */
-
 table tr td {
   border: 1px dotted #aaa;
   line-height: 38px;
@@ -146,6 +144,12 @@ table tr td pre {
   padding: 0 !important;
 }
 
+p {
+  line-height: 42px;
+}
+
+/* -------------------------------------------------------------------------- */
+
 #slide-6 table {
   font-size: .9em !important;
 }
@@ -157,6 +161,9 @@ table tr td pre {
   position: relative;
 }
 
-#slide-9 pre {
+#slide-9 pre,
+#slide-10 pre,
+#slide-11 pre,
+#slide-12 pre {
   text-align: center;
 }
