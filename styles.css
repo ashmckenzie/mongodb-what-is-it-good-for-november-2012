@@ -48,9 +48,9 @@ pre.sh_sourceCode {
   line-height: 22px;
 }
 
-code {
+/*code {
   font-size: 0.4em;
-}
+}*/
 
 #foreground,
 #foreground-lighter {
@@ -128,5 +128,35 @@ header img {
   text-align: center !important;
 }
 
+pre, .code {
+  font-size: 1.3em !important;
+}
+
 /* -------------------------------------------------------------------------- */
 
+table tr td {
+  border: 1px dotted #aaa;
+  line-height: 38px;
+  padding: 16px;
+  font-size: 1.2em;
+}
+
+table tr td pre {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#slide-6 table {
+  font-size: .9em !important;
+}
+
+#slide-7 code {
+  font-size: 2em;
+  line-height: 42px;
+  left: 230px;
+  position: relative;
+}
+
+#slide-9 pre {
+  text-align: center;
+}
