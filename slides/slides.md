@@ -200,6 +200,13 @@ Find all Documents with a status code >= 200 and <= 302
 
 !SLIDE bullets
 
+# HTTP interface #
+
+[http://localhost:28017](http://localhost:28017)
+
+
+!SLIDE bullets
+
 # MongoDB use case #
 
 ## Trawler ##
