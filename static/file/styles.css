@@ -1,0 +1,170 @@
+body {
+  background: url("background.png") transparent repeat fixed;
+  /*font-family: Arvo !important;*/
+}
+
+body {
+  /*font-family: Helvetica;*/
+  font-family: "FS Me";
+}
+
+a {
+  color: #5372E7;
+  text-decoration: none;
+  border-bottom: 1px dotted #98AAEE;
+}
+
+header p#title {
+  color: white;
+  font-size: 1.15em;
+  margin: 20px;
+  display: block;
+  /*text-shadow: 2px 2px 3px #333;*/
+  letter-spacing: 1px;
+  line-height: 22px;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 0;
+}
+
+h4 {
+  font-size: 1.15em;
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  /*font-family: Georgia;*/
+  font-family: "FS Me";
+  line-height: 1.3em;
+}
+
+pre.sh_sourceCode {
+  line-height: 22px;
+}
+
+/*code {
+  font-size: 0.4em;
+}*/
+
+#foreground,
+#foreground-lighter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+  z-index: -1
+}
+
+#foreground-lighter {
+  opacity: 0.2 !important;
+}
+
+#foreground img {
+  height: 100%;
+  width: 100%;
+}
+
+#footer {
+  background: transparent;
+  color: #888;
+}
+
+.slide {
+  /*background-color: #eee;*/
+  /*color: #333;*/
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  /*font-family: 'Gill Sans', Helvetica, Arial, sans-serif;*/
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+.slide {
+  z-index: 1;
+}
+
+.main .content > ul > li > ul > li {
+  padding: 8px;
+}
+
+.content > ul,
+.content > ol {
+  font-size: 2em ;
+}
+
+header {
+  background-color: #00BCE0;
+  border-bottom: 3px solid #009DBB;
+  top: 0;
+  height: 60px;
+  position: absolute;
+  width: 100%;
+}
+
+header img {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.bullets li {
+  margin-left: 0 !important;
+}
+
+#main h2 {
+  text-align: center !important;
+}
+
+pre, .code {
+  font-size: 1.3em !important;
+}
+
+table tr td {
+  border: 1px dotted #aaa;
+  line-height: 38px;
+  padding: 16px;
+  font-size: 1.2em;
+}
+
+table tr td pre {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+p {
+  line-height: 42px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+#slide-6 table {
+  font-size: .9em !important;
+}
+
+#slide-7 code {
+  font-size: 2em;
+  line-height: 42px;
+  left: 230px;
+  position: relative;
+}
+
+#slide-9 pre,
+#slide-10 pre,
+#slide-11 pre,
+#slide-12 pre {
+  text-align: center;
+}
